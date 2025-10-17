@@ -1,0 +1,62 @@
+/* Nord Theme Color Palette */
+/* Based on https://www.nordtheme.com/ */
+
+:root[data-theme='nord'] {
+  /* Polar Night - Dark backgrounds */
+  --nord0: #2e3440;
+  --nord1: #3b4252;
+  --nord2: #434c5e;
+  --nord3: #4c566a;
+
+  /* Snow Storm - Light foregrounds */
+  --nord4: #d8dee9;
+  --nord5: #e5e9f0;
+  --nord6: #eceff4;
+
+  /* Frost - Blues */
+  --nord7: #8fbcbb;
+  --nord8: #88c0d0;
+  --nord9: #81a1c1;
+  --nord10: #5e81ac;
+
+  /* Aurora - Accents */
+  --nord11: #bf616a; /* Red */
+  --nord12: #d08770; /* Orange */
+  --nord13: #ebcb8b; /* Yellow */
+  --nord14: #a3be8c; /* Green */
+  --nord15: #b48ead; /* Purple */
+
+  /* Apply Nord colors to existing CSS variables */
+  --color-background: var(--nord0);
+  --color-background-soft: var(--nord1);
+  --color-background-mute: var(--nord2);
+
+  --color-border: rgba(216, 222, 233, 0.2);
+  --color-border-hover: rgba(216, 222, 233, 0.4);
+
+  --color-heading: var(--nord6);
+  --color-text: var(--nord4);
+
+  --vt-c-white: var(--nord6);
+  --vt-c-white-soft: var(--nord5);
+  --vt-c-white-mute: var(--nord4);
+
+  --vt-c-black: var(--nord0);
+  --vt-c-black-soft: var(--nord1);
+  --vt-c-black-mute: var(--nord2);
+
+  --vt-c-indigo: var(--nord10);
+
+  --vt-c-text-dark-1: var(--nord6);
+  --vt-c-text-dark-2: var(--nord4);
+}
+
+/* Override link colors for Nord theme */
+:root[data-theme='nord'] a,
+:root[data-theme='nord'] .green {
+  color: var(--nord14);
+}
+
+:root[data-theme='nord'] a:hover {
+  background-color: rgba(163, 190, 140, 0.2);
+}
