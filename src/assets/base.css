@@ -63,7 +63,7 @@
 .theme-yellow {
   --color-background: var(--vt-c-yellow-soft);
   --color-background-soft: var(--vt-c-yellow-mute);
-  --color-background-mute: var(--vt-c-white-mute);
+  --color-background-mute: var(--vt-c-yellow-mute);
 
   --color-border: var(--vt-c-divider-yellow-2);
   --color-border-hover: var(--vt-c-divider-yellow-1);
