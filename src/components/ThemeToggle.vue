@@ -2,54 +2,43 @@
   <button
     @click="toggleTheme"
     class="theme-toggle"
-    :title="`Switch to ${getNextTheme()} theme`"
+    :title="`Switch to ${nextTheme} theme`"
     type="button"
   >
-    <span class="theme-icon">{{ getThemeIcon() }}</span>
-    <span class="theme-label">{{ getThemeLabel() }}</span>
+    <span class="theme-icon">{{ themeIcon }}</span>
+    <span class="theme-label">{{ themeLabel }}</span>
   </button>
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import { useTheme } from '@/composables/useTheme'
 
-const { theme, toggleTheme } = useTheme()
+const { theme, toggleTheme, THEMES } = useTheme()
 
-const getThemeIcon = () => {
-  switch (theme.value) {
-    case 'light':
-      return '☀️'
-    case 'dark':
-      return '🌙'
-    case 'system':
-    default:
-      return '💻'
+// Theme configuration map
+const THEME_CONFIG = {
+  [THEMES.LIGHT]: {
+    icon: '☀️',
+    label: 'Light',
+    next: 'dark'
+  },
+  [THEMES.DARK]: {
+    icon: '🌙',
+    label: 'Dark',
+    next: 'system'
+  },
+  [THEMES.SYSTEM]: {
+    icon: '💻',
+    label: 'System',
+    next: 'light'
   }
 }
 
-const getThemeLabel = () => {
-  switch (theme.value) {
-    case 'light':
-      return 'Light'
-    case 'dark':
-      return 'Dark'
-    case 'system':
-    default:
-      return 'System'
-  }
-}
-
-const getNextTheme = () => {
-  switch (theme.value) {
-    case 'light':
-      return 'dark'
-    case 'dark':
-      return 'system'
-    case 'system':
-    default:
-      return 'light'
-  }
-}
+const currentConfig = computed(() => THEME_CONFIG[theme.value] || THEME_CONFIG[THEMES.SYSTEM])
+const themeIcon = computed(() => currentConfig.value.icon)
+const themeLabel = computed(() => currentConfig.value.label)
+const nextTheme = computed(() => currentConfig.value.next)
 </script>
 
 <style scoped>
