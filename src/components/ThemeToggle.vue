@@ -7,19 +7,31 @@ const toggleTheme = () => {
   if (currentTheme.value === 'default') {
     currentTheme.value = 'nord'
     document.documentElement.setAttribute('data-theme', 'nord')
-    localStorage.setItem('theme', 'nord')
+    try {
+      localStorage.setItem('theme', 'nord')
+    } catch {
+      // localStorage may not be available in some environments
+    }
   } else {
     currentTheme.value = 'default'
     document.documentElement.removeAttribute('data-theme')
-    localStorage.setItem('theme', 'default')
+    try {
+      localStorage.setItem('theme', 'default')
+    } catch {
+      // localStorage may not be available in some environments
+    }
   }
 }
 
 onMounted(() => {
-  const savedTheme = localStorage.getItem('theme')
-  if (savedTheme === 'nord') {
-    currentTheme.value = 'nord'
-    document.documentElement.setAttribute('data-theme', 'nord')
+  try {
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme === 'nord') {
+      currentTheme.value = 'nord'
+      document.documentElement.setAttribute('data-theme', 'nord')
+    }
+  } catch {
+    // localStorage may not be available in some environments
   }
 })
 </script>
