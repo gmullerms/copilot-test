@@ -10,15 +10,24 @@
 
   --vt-c-indigo: #2c3e50;
 
+  --vt-c-yellow: #ffd700;
+  --vt-c-yellow-soft: #fff9e6;
+  --vt-c-yellow-mute: #fff4cc;
+  --vt-c-yellow-dark: #b8860b;
+
   --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
   --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
   --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
   --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+  --vt-c-divider-yellow-1: rgba(184, 134, 11, 0.29);
+  --vt-c-divider-yellow-2: rgba(184, 134, 11, 0.12);
 
   --vt-c-text-light-1: var(--vt-c-indigo);
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+  --vt-c-text-yellow-1: var(--vt-c-yellow-dark);
+  --vt-c-text-yellow-2: rgba(139, 101, 8, 0.8);
 }
 
 /* semantic color variables for this project */
@@ -48,6 +57,19 @@
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
   }
+}
+
+/* Yellow color theme */
+.theme-yellow {
+  --color-background: var(--vt-c-yellow-soft);
+  --color-background-soft: var(--vt-c-yellow-mute);
+  --color-background-mute: var(--vt-c-white-mute);
+
+  --color-border: var(--vt-c-divider-yellow-2);
+  --color-border-hover: var(--vt-c-divider-yellow-1);
+
+  --color-heading: var(--vt-c-text-yellow-1);
+  --color-text: var(--vt-c-text-yellow-2);
 }
 
 *,
