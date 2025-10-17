@@ -21,6 +21,17 @@ a,
   }
 }
 
+.theme-yellow a,
+.theme-yellow .green {
+  color: hsla(45, 100%, 35%, 1);
+}
+
+@media (hover: hover) {
+  .theme-yellow a:hover {
+    background-color: hsla(45, 100%, 35%, 0.2);
+  }
+}
+
 @media (min-width: 1024px) {
   body {
     display: flex;
